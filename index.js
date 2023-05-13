@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_pass}@cluster0.kjb9ctc.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.kjb9ctc.mongodb.net/?retryWrites=true&w=majority`;
 
 const client = new MongoClient(uri, {
     serverApi: {
@@ -20,6 +20,7 @@ const client = new MongoClient(uri, {
       deprecationErrors: true,
     }
   });
+
 
 
 async function run(){
@@ -44,5 +45,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, (req, res) => {
-    console.log(`assignment-11 server runnint on  ${port}`);
+    console.log(`server runnint on  ${port}`);
 })
